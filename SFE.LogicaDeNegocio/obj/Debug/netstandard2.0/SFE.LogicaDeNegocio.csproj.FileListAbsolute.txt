@@ -1,0 +1,9 @@
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\bin\Debug\netstandard2.0\SFE.LogicaDeNegocio.deps.json
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\bin\Debug\netstandard2.0\SFE.LogicaDeNegocio.dll
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\bin\Debug\netstandard2.0\SFE.LogicaDeNegocio.pdb
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.csproj.CoreCompileInputs.cache
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.AssemblyInfoInputs.cache
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.AssemblyInfo.cs
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.dll
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.pdb
+C:\Users\ALEXANDER\source\repos\SistemaFacturaElectronica\SFE.LogicaDeNegocio\obj\Debug\netstandard2.0\SFE.LogicaDeNegocio.csprojAssemblyReference.cache
