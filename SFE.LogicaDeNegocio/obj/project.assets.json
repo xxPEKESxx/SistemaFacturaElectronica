@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ALEXANDER\\source\\repos\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\SFE.LogicaDeNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\SFE.LogicaDeNegocio.csproj",
       "projectName": "SFE.LogicaDeNegocio",
-      "projectPath": "C:\\Users\\ALEXANDER\\source\\repos\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\SFE.LogicaDeNegocio.csproj",
+      "projectPath": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\SFE.LogicaDeNegocio.csproj",
       "packagesPath": "C:\\Users\\ALEXANDER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ALEXANDER\\source\\repos\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\obj\\",
+      "outputPath": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.LogicaDeNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPrincipal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tab_principal = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabSalir = new MetroFramework.Controls.MetroTile();
-            this.tabUsuarios = new MetroFramework.Controls.MetroTile();
             this.tabCierre = new MetroFramework.Controls.MetroTile();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.tab_principal = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.tabUsuarios = new MetroFramework.Controls.MetroTile();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.tab_principal.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -63,6 +63,91 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(881, 480);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // tab_principal
+            // 
+            this.tab_principal.Controls.Add(this.metroTabPage2);
+            this.tab_principal.Controls.Add(this.metroTabPage3);
+            this.tab_principal.Controls.Add(this.metroTabPage4);
+            this.tab_principal.Controls.Add(this.metroTabPage1);
+            this.tab_principal.Controls.Add(this.metroTabPage5);
+            this.tab_principal.Location = new System.Drawing.Point(36, 43);
+            this.tab_principal.Name = "tab_principal";
+            this.tab_principal.SelectedIndex = 4;
+            this.tab_principal.Size = new System.Drawing.Size(819, 348);
+            this.tab_principal.Style = MetroFramework.MetroColorStyle.Green;
+            this.tab_principal.TabIndex = 1;
+            this.tab_principal.UseSelectable = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(632, 306);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "INVENTARIO";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(632, 306);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "FACTURAR";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(632, 306);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "CIERRES";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(632, 306);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "USUARIOS";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage5
+            // 
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.HorizontalScrollbarSize = 10;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(811, 306);
+            this.metroTabPage5.TabIndex = 4;
+            this.metroTabPage5.Text = "CLIENTES";
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.VerticalScrollbarSize = 10;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.tabSalir);
@@ -80,12 +165,27 @@
             this.tabSalir.Location = new System.Drawing.Point(627, 3);
             this.tabSalir.Name = "tabSalir";
             this.tabSalir.Size = new System.Drawing.Size(192, 71);
+            this.tabSalir.Style = MetroFramework.MetroColorStyle.Red;
             this.tabSalir.TabIndex = 1;
             this.tabSalir.Text = "SALIR";
             this.tabSalir.TileImage = ((System.Drawing.Image)(resources.GetObject("tabSalir.TileImage")));
             this.tabSalir.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.tabSalir.UseSelectable = true;
             this.tabSalir.UseTileImage = true;
+            // 
+            // tabCierre
+            // 
+            this.tabCierre.ActiveControl = null;
+            this.tabCierre.Location = new System.Drawing.Point(429, 3);
+            this.tabCierre.Name = "tabCierre";
+            this.tabCierre.Size = new System.Drawing.Size(192, 71);
+            this.tabCierre.Style = MetroFramework.MetroColorStyle.Green;
+            this.tabCierre.TabIndex = 3;
+            this.tabCierre.Text = "ACERCA DE..";
+            this.tabCierre.TileImage = ((System.Drawing.Image)(resources.GetObject("tabCierre.TileImage")));
+            this.tabCierre.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tabCierre.UseSelectable = true;
+            this.tabCierre.UseTileImage = true;
             // 
             // tabUsuarios
             // 
@@ -101,105 +201,6 @@
             this.tabUsuarios.UseSelectable = true;
             this.tabUsuarios.UseTileImage = true;
             // 
-            // tabCierre
-            // 
-            this.tabCierre.ActiveControl = null;
-            this.tabCierre.Location = new System.Drawing.Point(429, 3);
-            this.tabCierre.Name = "tabCierre";
-            this.tabCierre.Size = new System.Drawing.Size(192, 71);
-            this.tabCierre.Style = MetroFramework.MetroColorStyle.Red;
-            this.tabCierre.TabIndex = 3;
-            this.tabCierre.Text = "ACERCA DE..";
-            this.tabCierre.TileImage = ((System.Drawing.Image)(resources.GetObject("tabCierre.TileImage")));
-            this.tabCierre.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tabCierre.UseSelectable = true;
-            this.tabCierre.UseTileImage = true;
-            // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(632, 306);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "USUARIOS";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage3
-            // 
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(632, 355);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "CIERRES";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(632, 355);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "FACTURAR";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(632, 306);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "INVENTARIO";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // tab_principal
-            // 
-            this.tab_principal.Controls.Add(this.metroTabPage1);
-            this.tab_principal.Controls.Add(this.metroTabPage2);
-            this.tab_principal.Controls.Add(this.metroTabPage3);
-            this.tab_principal.Controls.Add(this.metroTabPage4);
-            this.tab_principal.Controls.Add(this.metroTabPage5);
-            this.tab_principal.Location = new System.Drawing.Point(36, 43);
-            this.tab_principal.Name = "tab_principal";
-            this.tab_principal.SelectedIndex = 4;
-            this.tab_principal.Size = new System.Drawing.Size(640, 348);
-            this.tab_principal.Style = MetroFramework.MetroColorStyle.Green;
-            this.tab_principal.TabIndex = 1;
-            this.tab_principal.UseSelectable = true;
-            // 
-            // metroTabPage5
-            // 
-            this.metroTabPage5.HorizontalScrollbarBarColor = true;
-            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.HorizontalScrollbarSize = 10;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(632, 306);
-            this.metroTabPage5.TabIndex = 4;
-            this.metroTabPage5.Text = "CLIENTES";
-            this.metroTabPage5.VerticalScrollbarBarColor = true;
-            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.VerticalScrollbarSize = 10;
-            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,8 +211,8 @@
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.tab_principal.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
