@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.campoTextoUser = new MetroFramework.Controls.MetroTextBox();
-            this.campoTextoPassword = new MetroFramework.Controls.MetroTextBox();
-            this.botonInicioSesion = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.botonInicioSesion = new MetroFramework.Controls.MetroTile();
+            this.campoTextoPassword = new MetroFramework.Controls.MetroTextBox();
+            this.campoTextoUser = new MetroFramework.Controls.MetroTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,63 +59,39 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 12;
             // 
-            // label1
+            // metroTile2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(52, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(306, 24);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sistema de Facturacion Electronica";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(215, 211);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(130, 97);
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTile2.TabIndex = 4;
+            this.metroTile2.Text = "SALIR";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
+            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.UseSelectable = true;
+            this.metroTile2.UseTileImage = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
-            // label2
+            // botonInicioSesion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(134, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Inicio De Sesión";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // campoTextoUser
-            // 
-            // 
-            // 
-            // 
-            this.campoTextoUser.CustomButton.Image = null;
-            this.campoTextoUser.CustomButton.Location = new System.Drawing.Point(252, 2);
-            this.campoTextoUser.CustomButton.Name = "";
-            this.campoTextoUser.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.campoTextoUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.campoTextoUser.CustomButton.TabIndex = 1;
-            this.campoTextoUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.campoTextoUser.CustomButton.UseSelectable = true;
-            this.campoTextoUser.CustomButton.Visible = false;
-            this.campoTextoUser.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.campoTextoUser.Lines = new string[0];
-            this.campoTextoUser.Location = new System.Drawing.Point(65, 104);
-            this.campoTextoUser.MaxLength = 32767;
-            this.campoTextoUser.Name = "campoTextoUser";
-            this.campoTextoUser.PasswordChar = '\0';
-            this.campoTextoUser.PromptText = "Nombre De Usuario";
-            this.campoTextoUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.campoTextoUser.SelectedText = "";
-            this.campoTextoUser.SelectionLength = 0;
-            this.campoTextoUser.SelectionStart = 0;
-            this.campoTextoUser.ShortcutsEnabled = true;
-            this.campoTextoUser.Size = new System.Drawing.Size(280, 30);
-            this.campoTextoUser.TabIndex = 3;
-            this.campoTextoUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.campoTextoUser.UseSelectable = true;
-            this.campoTextoUser.WaterMark = "Nombre De Usuario";
-            this.campoTextoUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.campoTextoUser.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonInicioSesion.ActiveControl = null;
+            this.botonInicioSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.botonInicioSesion.Location = new System.Drawing.Point(65, 211);
+            this.botonInicioSesion.Name = "botonInicioSesion";
+            this.botonInicioSesion.Size = new System.Drawing.Size(124, 97);
+            this.botonInicioSesion.Style = MetroFramework.MetroColorStyle.Green;
+            this.botonInicioSesion.TabIndex = 4;
+            this.botonInicioSesion.Text = "INICIO SESIÓN";
+            this.botonInicioSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.botonInicioSesion.TileImage = ((System.Drawing.Image)(resources.GetObject("botonInicioSesion.TileImage")));
+            this.botonInicioSesion.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.botonInicioSesion.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.botonInicioSesion.UseSelectable = true;
+            this.botonInicioSesion.UseTileImage = true;
+            this.botonInicioSesion.Click += new System.EventHandler(this.botonInicioSesion_Click);
             // 
             // campoTextoPassword
             // 
@@ -152,39 +128,63 @@
             this.campoTextoPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.campoTextoPassword.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // botonInicioSesion
+            // campoTextoUser
             // 
-            this.botonInicioSesion.ActiveControl = null;
-            this.botonInicioSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.botonInicioSesion.Location = new System.Drawing.Point(65, 211);
-            this.botonInicioSesion.Name = "botonInicioSesion";
-            this.botonInicioSesion.Size = new System.Drawing.Size(124, 97);
-            this.botonInicioSesion.Style = MetroFramework.MetroColorStyle.Green;
-            this.botonInicioSesion.TabIndex = 4;
-            this.botonInicioSesion.Text = "INICIO SESIÓN";
-            this.botonInicioSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.botonInicioSesion.TileImage = ((System.Drawing.Image)(resources.GetObject("botonInicioSesion.TileImage")));
-            this.botonInicioSesion.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.botonInicioSesion.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
-            this.botonInicioSesion.UseSelectable = true;
-            this.botonInicioSesion.UseTileImage = true;
-            this.botonInicioSesion.Click += new System.EventHandler(this.botonInicioSesion_Click);
             // 
-            // metroTile2
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(215, 211);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(130, 97);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTile2.TabIndex = 4;
-            this.metroTile2.Text = "SALIR";
-            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            // 
+            this.campoTextoUser.CustomButton.Image = null;
+            this.campoTextoUser.CustomButton.Location = new System.Drawing.Point(252, 2);
+            this.campoTextoUser.CustomButton.Name = "";
+            this.campoTextoUser.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.campoTextoUser.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.campoTextoUser.CustomButton.TabIndex = 1;
+            this.campoTextoUser.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.campoTextoUser.CustomButton.UseSelectable = true;
+            this.campoTextoUser.CustomButton.Visible = false;
+            this.campoTextoUser.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.campoTextoUser.Lines = new string[0];
+            this.campoTextoUser.Location = new System.Drawing.Point(65, 104);
+            this.campoTextoUser.MaxLength = 32767;
+            this.campoTextoUser.Name = "campoTextoUser";
+            this.campoTextoUser.PasswordChar = '\0';
+            this.campoTextoUser.PromptText = "Nombre De Usuario";
+            this.campoTextoUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.campoTextoUser.SelectedText = "";
+            this.campoTextoUser.SelectionLength = 0;
+            this.campoTextoUser.SelectionStart = 0;
+            this.campoTextoUser.ShortcutsEnabled = true;
+            this.campoTextoUser.Size = new System.Drawing.Size(280, 30);
+            this.campoTextoUser.TabIndex = 3;
+            this.campoTextoUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.campoTextoUser.UseSelectable = true;
+            this.campoTextoUser.WaterMark = "Nombre De Usuario";
+            this.campoTextoUser.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.campoTextoUser.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(134, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Inicio De Sesión";
+            this.label2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(52, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(306, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sistema de Facturacion Electronica";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Login
             // 
@@ -193,6 +193,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(416, 390);
+            this.ControlBox = false;
             this.Controls.Add(this.metroPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

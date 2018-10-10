@@ -36,7 +36,7 @@ namespace SFE.FrontEnd
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void botonInicioSesion_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace SFE.FrontEnd
 
             entraSistema.Visible = true;
             Login login = new Login();
-            login.Visible = false;
+            Visible = false;
         }
     }
 }

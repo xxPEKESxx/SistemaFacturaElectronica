@@ -20,7 +20,37 @@ namespace SFE.FrontEnd
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'bDSFE.Clientes' Puede moverla o quitarla según sea necesario.
+            this.clientesTableAdapter.Fill(this.bDSFE.Clientes);
+            DataGridViewButtonColumn botonColumn = new DataGridViewButtonColumn();
+            botonColumn.Name = "Eliminar";
+          
 
+
+
+        }
+
+        private void tabSalir_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr= MetroFramework.MetroMessageBox.Show(this, "DESEA SALIR DEL SISTEMA??",
+                "Salir del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr==DialogResult.Yes) {
+
+                Application.Exit();
+                
+            }
+        }
+
+        private void metroTextBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VentanaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

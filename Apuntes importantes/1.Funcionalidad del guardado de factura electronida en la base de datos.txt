@@ -1,0 +1,9 @@
+Funcionalidad en base de datos
+
+Relacionado con la factura y la lista de productos de la factura
+se va a trabajar de la siguiente manera:
+
+se creara la factura en la base de datos para despues ir agregando productos a esta factura
+esto con el fin de mantener una buena practica de gestion de base de datos ademas de una informacion legible. 
+una ves los productos se agreguen con su respectiva factura esta se podra enviar al sistema de hacienda
+una factura no puede enviarse sin productos hacienda por esta razon se crea esta funcionalidad.

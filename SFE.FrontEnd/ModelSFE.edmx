@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SFE_CostaRicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoDeIdentificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="identificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="50" />
+          <Property Name="fax" Type="int" />
+          <Property Name="apartadoPostal" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="pais" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="canton" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="distrito" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="barrio" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="facturaElectronica">
+          <Key>
+            <PropertyRef Name="idFacturaElectronica" />
+          </Key>
+          <Property Name="idFacturaElectronica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numeroConsecutivo" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="numeroClave" Type="varchar" MaxLength="50" />
+          <Property Name="idLocal" Type="int" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="condicionVenta" Type="varchar" MaxLength="50" />
+          <Property Name="plazoCredito" Type="varchar" MaxLength="50" />
+          <Property Name="medioPago" Type="varchar" MaxLength="50" />
+          <Property Name="montoTotal" Type="float" />
+          <Property Name="descuento" Type="float" />
+          <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" />
+          <Property Name="idUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Historial">
+          <Key>
+            <PropertyRef Name="idHisorial" />
+          </Key>
+          <Property Name="idHisorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="usuarioEditor" Type="varchar" MaxLength="50" />
+          <Property Name="tablaEditada" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="idInventario" />
+          </Key>
+          <Property Name="idInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoProducto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipoCodigo" Type="int" Nullable="false" />
+          <Property Name="descripcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcionLarga" Type="varchar(max)" Nullable="false" />
+          <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="costoCompra" Type="float" Nullable="false" />
+          <Property Name="precioVenta" Type="float" Nullable="false" />
+          <Property Name="agregarImpuestoVenta" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ListaProductos">
+          <Key>
+            <PropertyRef Name="idListaProductos" />
+          </Key>
+          <Property Name="idListaProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numeroConsecutivoDeFactura" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipoCodigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descrpcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcionLarga" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="costoCompra" Type="float" Nullable="false" />
+          <Property Name="precioVenta" Type="float" Nullable="false" />
+          <Property Name="agregarImpuesto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Local">
+          <Key>
+            <PropertyRef Name="idLocal" />
+          </Key>
+          <Property Name="idLocal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoIdentificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="50" />
+          <Property Name="faxTelefono" Type="varchar" MaxLength="50" />
+          <Property Name="apartadoPostal" Type="varchar" MaxLength="50" />
+          <Property Name="web" Type="varchar" MaxLength="50" />
+          <Property Name="pais" Type="varchar" MaxLength="50" />
+          <Property Name="provincia" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="claveCritografica" Type="varchar" MaxLength="50" />
+          <Property Name="passwordHacienda" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="cedula" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Clientes_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_facturaElectronica_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="facturaElectronica">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Local_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Local" Type="Self.Local" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Local">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SFE_CostaRicaModelStoreContainer">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="facturaElectronica" EntityType="Self.facturaElectronica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Historial" EntityType="Self.Historial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListaProductos" EntityType="Self.ListaProductos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Local" EntityType="Self.Local" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clientes_Usuarios" Association="Self.FK_Clientes_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_facturaElectronica_Usuarios" Association="Self.FK_facturaElectronica_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Local" EntitySet="Local" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SFE_CostaRicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoDeIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="Int32" />
+          <Property Name="apartadoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Clientes_Usuarios" FromRole="Clientes" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="facturaElectronica">
+          <Key>
+            <PropertyRef Name="idFacturaElectronica" />
+          </Key>
+          <Property Name="idFacturaElectronica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroConsecutivo" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="numeroClave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idLocal" Type="Int32" />
+          <Property Name="idCliente" Type="Int32" />
+          <Property Name="condicionVenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="plazoCredito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="medioPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="montoTotal" Type="Double" />
+          <Property Name="descuento" Type="Double" />
+          <Property Name="naturalezaDescuento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idUser" Type="Int32" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_facturaElectronica_Usuarios" FromRole="facturaElectronica" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Historial">
+          <Key>
+            <PropertyRef Name="idHisorial" />
+          </Key>
+          <Property Name="idHisorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="usuarioEditor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tablaEditada" Type="Binary" MaxLength="50" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Inventario">
+          <Key>
+            <PropertyRef Name="idInventario" />
+          </Key>
+          <Property Name="idInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoCodigo" Type="Int32" Nullable="false" />
+          <Property Name="descripcionCorta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcionLarga" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="costoCompra" Type="Double" Nullable="false" />
+          <Property Name="precioVenta" Type="Double" Nullable="false" />
+          <Property Name="agregarImpuestoVenta" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Inventario_Usuarios" FromRole="Inventario" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="ListaProductos">
+          <Key>
+            <PropertyRef Name="idListaProductos" />
+          </Key>
+          <Property Name="idListaProductos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroConsecutivoDeFactura" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipoCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descrpcionCorta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcionLarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="costoCompra" Type="Double" Nullable="false" />
+          <Property Name="precioVenta" Type="Double" Nullable="false" />
+          <Property Name="agregarImpuesto" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Local">
+          <Key>
+            <PropertyRef Name="idLocal" />
+          </Key>
+          <Property Name="idLocal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="faxTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apartadoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="claveCritografica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="passwordHacienda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Local_Usuarios" FromRole="Local" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUser" />
+          </Key>
+          <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Clientes_Usuarios" FromRole="Usuarios" ToRole="Clientes" />
+          <NavigationProperty Name="facturaElectronica" Relationship="Self.FK_facturaElectronica_Usuarios" FromRole="Usuarios" ToRole="facturaElectronica" />
+          <NavigationProperty Name="Inventario" Relationship="Self.FK_Inventario_Usuarios" FromRole="Usuarios" ToRole="Inventario" />
+          <NavigationProperty Name="Local" Relationship="Self.FK_Local_Usuarios" FromRole="Usuarios" ToRole="Local" />
+        </EntityType>
+        <Association Name="FK_Clientes_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_facturaElectronica_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="facturaElectronica">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inventario_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Inventario">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Local_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Local" Type="Self.Local" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Local">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SFE_CostaRicaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="facturaElectronica" EntityType="Self.facturaElectronica" />
+          <EntitySet Name="Historial" EntityType="Self.Historial" />
+          <EntitySet Name="Inventario" EntityType="Self.Inventario" />
+          <EntitySet Name="ListaProductos" EntityType="Self.ListaProductos" />
+          <EntitySet Name="Local" EntityType="Self.Local" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_Clientes_Usuarios" Association="Self.FK_Clientes_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_facturaElectronica_Usuarios" Association="Self.FK_facturaElectronica_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Local" EntitySet="Local" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SFE_CostaRicaModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SFE_CostaRicaModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SFE_CostaRicaModelStoreContainer" CdmEntityContainer="SFE_CostaRicaEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="tipoDeIdentificacion" ColumnName="tipoDeIdentificacion" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="apartadoPostal" ColumnName="apartadoPostal" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="canton" ColumnName="canton" />
+                <ScalarProperty Name="distrito" ColumnName="distrito" />
+                <ScalarProperty Name="barrio" ColumnName="barrio" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="facturaElectronica">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.facturaElectronica">
+              <MappingFragment StoreEntitySet="facturaElectronica">
+                <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
+                <ScalarProperty Name="numeroConsecutivo" ColumnName="numeroConsecutivo" />
+                <ScalarProperty Name="numeroClave" ColumnName="numeroClave" />
+                <ScalarProperty Name="idLocal" ColumnName="idLocal" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="condicionVenta" ColumnName="condicionVenta" />
+                <ScalarProperty Name="plazoCredito" ColumnName="plazoCredito" />
+                <ScalarProperty Name="medioPago" ColumnName="medioPago" />
+                <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+                <ScalarProperty Name="descuento" ColumnName="descuento" />
+                <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Historial">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.Historial">
+              <MappingFragment StoreEntitySet="Historial">
+                <ScalarProperty Name="idHisorial" ColumnName="idHisorial" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="usuarioEditor" ColumnName="usuarioEditor" />
+                <ScalarProperty Name="tablaEditada" ColumnName="tablaEditada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Inventario">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.Inventario">
+              <MappingFragment StoreEntitySet="Inventario">
+                <ScalarProperty Name="idInventario" ColumnName="idInventario" />
+                <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+                <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
+                <ScalarProperty Name="descripcionCorta" ColumnName="descripcionCorta" />
+                <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+                <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="agregarImpuestoVenta" ColumnName="agregarImpuestoVenta" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListaProductos">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
+              <MappingFragment StoreEntitySet="ListaProductos">
+                <ScalarProperty Name="idListaProductos" ColumnName="idListaProductos" />
+                <ScalarProperty Name="numeroConsecutivoDeFactura" ColumnName="numeroConsecutivoDeFactura" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
+                <ScalarProperty Name="descrpcionCorta" ColumnName="descrpcionCorta" />
+                <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
+                <ScalarProperty Name="unidad" ColumnName="unidad" />
+                <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Local">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.Local">
+              <MappingFragment StoreEntitySet="Local">
+                <ScalarProperty Name="idLocal" ColumnName="idLocal" />
+                <ScalarProperty Name="tipoIdentificacion" ColumnName="tipoIdentificacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="faxTelefono" ColumnName="faxTelefono" />
+                <ScalarProperty Name="apartadoPostal" ColumnName="apartadoPostal" />
+                <ScalarProperty Name="web" ColumnName="web" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="claveCritografica" ColumnName="claveCritografica" />
+                <ScalarProperty Name="passwordHacienda" ColumnName="passwordHacienda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="SFE_CostaRicaModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SFE_CostaRicaModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SFE_CostaRicaModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SFE_CostaRicaModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SFE_CostaRicaModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SFE_CostaRicaModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SFE_CostaRicaModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SFE_CostaRicaModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SFE_CostaRicaModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SFE_CostaRicaModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

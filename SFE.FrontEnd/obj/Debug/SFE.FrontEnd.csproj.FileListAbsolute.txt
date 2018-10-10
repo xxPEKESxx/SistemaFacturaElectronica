@@ -28,3 +28,7 @@ C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\obj\D
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\obj\Debug\SFE.FrontEnd.csproj.CopyComplete
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\obj\Debug\SFE.FrontEnd.exe
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\obj\Debug\SFE.FrontEnd.pdb
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\bin\Debug\EntityFramework.dll
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\bin\Debug\EntityFramework.xml
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.FrontEnd\bin\Debug\EntityFramework.SqlServer.xml

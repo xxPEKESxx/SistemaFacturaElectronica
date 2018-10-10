@@ -1,0 +1,38 @@
+*****inventario*****
+
++codigo producto
++tipo codigo (interna, de proveedor o autogenerada.
++tipo producto(producto o servicios profecionales)
++descripcion corta
++descrip larga
++unidad(servicios profecionales,kilometros,metro,milimetro
+,centimetro,metrocuadrado,metrocubico,gramos,onzas
+,kilos,toneladas,mililitro,litro,hora,dia,pulgada).
++costo compra colones o dolares
++precio de venta
++agregar impuesto de venta(13%).
+
+****cliente*****
+
++tipo de identificacion (juridica o fisica)
++identificacion
++nombre
++area
++fax
++email
++apartado postal
++web
++pais
++provincia
++canton
++distrito
++email 2
++direccion
+
+
+50608101801234568911112312345120123456891112004950
+
+12312345120123456891
+
+
+
