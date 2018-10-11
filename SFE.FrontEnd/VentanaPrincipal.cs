@@ -52,5 +52,10 @@ namespace SFE.FrontEnd
         {
             Application.Exit();
         }
+
+        private void metroGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
