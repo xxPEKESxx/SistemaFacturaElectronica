@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\source\repos\FacturaElectronicaCR-master\FacturaElectronicaCR-master\FacturaElectronicaCR_CS\FacturaElectronicaCR_CS.csproj" />
+    <ProjectReference Include="..\SFE.AccesoADatos\SFE.AccesoADatos.csproj" />
+  </ItemGroup>
+
 </Project>

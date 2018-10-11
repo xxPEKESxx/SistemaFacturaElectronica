@@ -25,6 +25,24 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "FacturaElectronicaCR_CS/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/FacturaElectronicaCR_CS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FacturaElectronicaCR_CS.dll": {}
+        }
+      },
+      "SFE.AccesoADatos/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/SFE.AccesoADatos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SFE.AccesoADatos.dll": {}
+        }
       }
     }
   },
@@ -168,11 +186,23 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "FacturaElectronicaCR_CS/1.0.0": {
+      "type": "project",
+      "path": "../../../../source/repos/FacturaElectronicaCR-master/FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj",
+      "msbuildProject": "../../../../source/repos/FacturaElectronicaCR-master/FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj"
+    },
+    "SFE.AccesoADatos/1.0.0": {
+      "type": "project",
+      "path": "../SFE.AccesoADatos/SFE.AccesoADatos.csproj",
+      "msbuildProject": "../SFE.AccesoADatos/SFE.AccesoADatos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "FacturaElectronicaCR_CS >= 1.0.0",
+      "NETStandard.Library >= 2.0.3",
+      "SFE.AccesoADatos >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -204,7 +234,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.AccesoADatos\\SFE.AccesoADatos.csproj": {
+              "projectPath": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.AccesoADatos\\SFE.AccesoADatos.csproj"
+            },
+            "C:\\Users\\ALEXANDER\\source\\repos\\FacturaElectronicaCR-master\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj": {
+              "projectPath": "C:\\Users\\ALEXANDER\\source\\repos\\FacturaElectronicaCR-master\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -207,5 +207,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SFE.LogicaDeNegocio\SFE.LogicaDeNegocio.csproj">
+      <Project>{ae51c46d-3ed0-4c3a-84e3-2ebaa0cbb7f2}</Project>
+      <Name>SFE.LogicaDeNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
