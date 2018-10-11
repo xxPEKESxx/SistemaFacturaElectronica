@@ -189,8 +189,8 @@
     },
     "FacturaElectronicaCR_CS/1.0.0": {
       "type": "project",
-      "path": "../../../../source/repos/FacturaElectronicaCR-master/FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj",
-      "msbuildProject": "../../../../source/repos/FacturaElectronicaCR-master/FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj"
+      "path": "../FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj",
+      "msbuildProject": "../FacturaElectronicaCR-master/FacturaElectronicaCR_CS/FacturaElectronicaCR_CS.csproj"
     },
     "SFE.AccesoADatos/1.0.0": {
       "type": "project",
@@ -235,11 +235,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj": {
+              "projectPath": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj"
+            },
             "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.AccesoADatos\\SFE.AccesoADatos.csproj": {
               "projectPath": "C:\\Users\\ALEXANDER\\Documents\\GitHub\\SistemaFacturaElectronica\\SFE.AccesoADatos\\SFE.AccesoADatos.csproj"
-            },
-            "C:\\Users\\ALEXANDER\\source\\repos\\FacturaElectronicaCR-master\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj": {
-              "projectPath": "C:\\Users\\ALEXANDER\\source\\repos\\FacturaElectronicaCR-master\\FacturaElectronicaCR-master\\FacturaElectronicaCR_CS\\FacturaElectronicaCR_CS.csproj"
             }
           }
         }

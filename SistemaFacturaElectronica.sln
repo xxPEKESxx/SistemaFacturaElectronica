@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFE.FrontEnd", "SFE.FrontEn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFE.LogicaDeNegocio", "SFE.LogicaDeNegocio\SFE.LogicaDeNegocio.csproj", "{AE51C46D-3ED0-4C3A-84E3-2EBAA0CBB7F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturaElectronicaCR_CS", "..\..\..\source\repos\FacturaElectronicaCR-master\FacturaElectronicaCR-master\FacturaElectronicaCR_CS\FacturaElectronicaCR_CS.csproj", "{AFA0696F-555B-4459-BEC8-E98F2CAD9076}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturaElectronicaCR_CS", "FacturaElectronicaCR-master\FacturaElectronicaCR_CS\FacturaElectronicaCR_CS.csproj", "{AFA0696F-555B-4459-BEC8-E98F2CAD9076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
