@@ -9,3 +9,10 @@ C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.AccesoADatos\b
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CoreCompileInputs.cache
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.dll
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.pdb
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.dll.config
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.dll
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.pdb
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csprojAssemblyReference.cache
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CoreCompileInputs.cache
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.dll
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.pdb
