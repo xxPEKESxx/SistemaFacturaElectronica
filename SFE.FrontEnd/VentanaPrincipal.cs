@@ -20,13 +20,8 @@ namespace SFE.FrontEnd
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'bDSFE.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.bDSFE.Clientes);
-            DataGridViewButtonColumn botonColumn = new DataGridViewButtonColumn();
-            botonColumn.Name = "Eliminar";
-          
-
-
+            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
+            this.clientesTableAdapter.Fill(this.sFE_CostaRicaDataSet.Clientes);
 
         }
 
@@ -54,6 +49,11 @@ namespace SFE.FrontEnd
         }
 
         private void metroGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void metroGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

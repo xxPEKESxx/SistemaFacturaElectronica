@@ -14,8 +14,14 @@ namespace SFE.FrontEnd
     
     public partial class facturaElectronica
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public facturaElectronica()
+        {
+            this.ListaProductos = new HashSet<ListaProductos>();
+        }
+    
         public int idFacturaElectronica { get; set; }
-        public byte[] numeroConsecutivo { get; set; }
+        public string numeroConsecutivo { get; set; }
         public string numeroClave { get; set; }
         public Nullable<int> idLocal { get; set; }
         public Nullable<int> idCliente { get; set; }
@@ -26,7 +32,12 @@ namespace SFE.FrontEnd
         public Nullable<double> descuento { get; set; }
         public string naturalezaDescuento { get; set; }
         public Nullable<int> idUser { get; set; }
+        public Nullable<int> idListaProductos { get; set; }
     
+        public virtual Clientes Clientes { get; set; }
+        public virtual Local Local { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ListaProductos> ListaProductos { get; set; }
     }
 }

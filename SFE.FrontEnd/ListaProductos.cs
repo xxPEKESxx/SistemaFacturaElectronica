@@ -24,5 +24,7 @@ namespace SFE.FrontEnd
         public double costoCompra { get; set; }
         public double precioVenta { get; set; }
         public int agregarImpuesto { get; set; }
+    
+        public virtual facturaElectronica facturaElectronica { get; set; }
     }
 }

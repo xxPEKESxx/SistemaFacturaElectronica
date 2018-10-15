@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SFE_CostaRicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoDeIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="identificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_Clientes_Usuarios" FromRole="Clientes" ToRole="Usuarios" />
+    <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Clientes" FromRole="Clientes" ToRole="facturaElectronica" />
+  </EntityType>
+  <EntityContainer Name="SFE_CostaRicaEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="facturaElectronica" EntityType="SFE_CostaRicaModel.facturaElectronica" />
+    <EntitySet Name="Historial" EntityType="SFE_CostaRicaModel.Historial" />
+    <EntitySet Name="Inventario" EntityType="SFE_CostaRicaModel.Inventario" />
+    <EntitySet Name="ListaProductos" EntityType="SFE_CostaRicaModel.ListaProductos" />
+    <EntitySet Name="Local" EntityType="SFE_CostaRicaModel.Local" />
+    <EntitySet Name="sysdiagrams" EntityType="SFE_CostaRicaModel.sysdiagrams" />
+    <EntitySet Name="Usuarios" EntityType="SFE_CostaRicaModel.Usuarios" />
+    <AssociationSet Name="FK_Clientes_Usuarios" Association="SFE_CostaRicaModel.FK_Clientes_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_facturaElectronica_Clientes" Association="SFE_CostaRicaModel.FK_facturaElectronica_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_facturaElectronica_Local" Association="SFE_CostaRicaModel.FK_facturaElectronica_Local">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_facturaElectronica_Usuarios" Association="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListaProductos_facturaElectronica" Association="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica">
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+      <End Role="ListaProductos" EntitySet="ListaProductos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Usuarios" Association="SFE_CostaRicaModel.FK_Inventario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Local_Usuarios" Association="SFE_CostaRicaModel.FK_Local_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Local" EntitySet="Local" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="facturaElectronica">
+    <Key>
+      <PropertyRef Name="idFacturaElectronica" />
+    </Key>
+    <Property Name="idFacturaElectronica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numeroConsecutivo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="numeroClave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idLocal" Type="Int32" />
+    <Property Name="idCliente" Type="Int32" />
+    <Property Name="condicionVenta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="plazoCredito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="medioPago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="montoTotal" Type="Double" />
+    <Property Name="descuento" Type="Double" />
+    <Property Name="naturalezaDescuento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idUser" Type="Int32" />
+    <Property Name="idListaProductos" Type="Int32" />
+    <NavigationProperty Name="Clientes" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Clientes" FromRole="facturaElectronica" ToRole="Clientes" />
+    <NavigationProperty Name="Local" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Local" FromRole="facturaElectronica" ToRole="Local" />
+    <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios" FromRole="facturaElectronica" ToRole="Usuarios" />
+    <NavigationProperty Name="ListaProductos" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="facturaElectronica" ToRole="ListaProductos" />
+  </EntityType>
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="idHisorial" />
+    </Key>
+    <Property Name="idHisorial" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="usuarioEditor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tablaEditada" Type="Binary" MaxLength="50" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="idInventario" />
+    </Key>
+    <Property Name="idInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoProducto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoCodigo" Type="Int32" Nullable="false" />
+    <Property Name="descripcionCorta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcionLarga" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="unidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="costoCompra" Type="Double" Nullable="false" />
+    <Property Name="precioVenta" Type="Double" Nullable="false" />
+    <Property Name="agregarImpuestoVenta" Type="Int32" Nullable="false" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_Inventario_Usuarios" FromRole="Inventario" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="ListaProductos">
+    <Key>
+      <PropertyRef Name="idListaProductos" />
+    </Key>
+    <Property Name="idListaProductos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numeroConsecutivoDeFactura" Type="Int32" Nullable="false" />
+    <Property Name="codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoCodigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descrpcionCorta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcionLarga" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="unidad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="costoCompra" Type="Double" Nullable="false" />
+    <Property Name="precioVenta" Type="Double" Nullable="false" />
+    <Property Name="agregarImpuesto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="ListaProductos" ToRole="facturaElectronica" />
+  </EntityType>
+  <EntityType Name="Local">
+    <Key>
+      <PropertyRef Name="idLocal" />
+    </Key>
+    <Property Name="idLocal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoIdentificacion" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="faxTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="web" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="claveCritografica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="passwordHacienda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroIdentificacion" Type="Binary" Nullable="false" MaxLength="50" FixedLength="false" />
+    <Property Name="canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ubicacionOtrasSenas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Local" FromRole="Local" ToRole="facturaElectronica" />
+    <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_Local_Usuarios" FromRole="Local" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clientes" Relationship="SFE_CostaRicaModel.FK_Clientes_Usuarios" FromRole="Usuarios" ToRole="Clientes" />
+    <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios" FromRole="Usuarios" ToRole="facturaElectronica" />
+    <NavigationProperty Name="Inventario" Relationship="SFE_CostaRicaModel.FK_Inventario_Usuarios" FromRole="Usuarios" ToRole="Inventario" />
+    <NavigationProperty Name="Local" Relationship="SFE_CostaRicaModel.FK_Local_Usuarios" FromRole="Usuarios" ToRole="Local" />
+  </EntityType>
+  <Association Name="FK_Clientes_Usuarios">
+    <End Type="SFE_CostaRicaModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="SFE_CostaRicaModel.Clientes" Role="Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_facturaElectronica_Clientes">
+    <End Type="SFE_CostaRicaModel.Clientes" Role="Clientes" Multiplicity="0..1" />
+    <End Type="SFE_CostaRicaModel.facturaElectronica" Role="facturaElectronica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="facturaElectronica">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_facturaElectronica_Local">
+    <End Type="SFE_CostaRicaModel.Local" Role="Local" Multiplicity="0..1" />
+    <End Type="SFE_CostaRicaModel.facturaElectronica" Role="facturaElectronica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="idLocal" />
+      </Principal>
+      <Dependent Role="facturaElectronica">
+        <PropertyRef Name="idLocal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_facturaElectronica_Usuarios">
+    <End Type="SFE_CostaRicaModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="SFE_CostaRicaModel.facturaElectronica" Role="facturaElectronica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="facturaElectronica">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListaProductos_facturaElectronica">
+    <End Type="SFE_CostaRicaModel.facturaElectronica" Role="facturaElectronica" Multiplicity="1" />
+    <End Type="SFE_CostaRicaModel.ListaProductos" Role="ListaProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="facturaElectronica">
+        <PropertyRef Name="idFacturaElectronica" />
+      </Principal>
+      <Dependent Role="ListaProductos">
+        <PropertyRef Name="numeroConsecutivoDeFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Usuarios">
+    <End Type="SFE_CostaRicaModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="SFE_CostaRicaModel.Inventario" Role="Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Local_Usuarios">
+    <End Type="SFE_CostaRicaModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="SFE_CostaRicaModel.Local" Role="Local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Local">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

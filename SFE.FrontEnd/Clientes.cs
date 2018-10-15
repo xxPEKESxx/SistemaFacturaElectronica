@@ -14,23 +14,23 @@ namespace SFE.FrontEnd
     
     public partial class Clientes
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Clientes()
+        {
+            this.facturaElectronica = new HashSet<facturaElectronica>();
+        }
+    
         public int idCliente { get; set; }
         public string tipoDeIdentificacion { get; set; }
         public string identificacion { get; set; }
-        public string nombre { get; set; }
-        public string apellidos { get; set; }
+        public string nombreCompleto { get; set; }
         public string area { get; set; }
-        public Nullable<int> fax { get; set; }
-        public string apartadoPostal { get; set; }
-        public string web { get; set; }
-        public string pais { get; set; }
-        public string provincia { get; set; }
-        public string canton { get; set; }
-        public string distrito { get; set; }
-        public string barrio { get; set; }
+        public int telefono { get; set; }
         public string email { get; set; }
         public int idUser { get; set; }
     
         public virtual Usuarios Usuarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<facturaElectronica> facturaElectronica { get; set; }
     }
 }

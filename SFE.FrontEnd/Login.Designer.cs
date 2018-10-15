@@ -65,7 +65,7 @@
             this.metroTile2.Location = new System.Drawing.Point(215, 211);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(130, 97);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Yellow;
             this.metroTile2.TabIndex = 4;
             this.metroTile2.Text = "SALIR";
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -82,7 +82,7 @@
             this.botonInicioSesion.Location = new System.Drawing.Point(65, 211);
             this.botonInicioSesion.Name = "botonInicioSesion";
             this.botonInicioSesion.Size = new System.Drawing.Size(124, 97);
-            this.botonInicioSesion.Style = MetroFramework.MetroColorStyle.Green;
+            this.botonInicioSesion.Style = MetroFramework.MetroColorStyle.Yellow;
             this.botonInicioSesion.TabIndex = 4;
             this.botonInicioSesion.Text = "INICIO SESIÓN";
             this.botonInicioSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -204,7 +204,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Style = MetroFramework.MetroColorStyle.Green;
+            this.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Load += new System.EventHandler(this.Login_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

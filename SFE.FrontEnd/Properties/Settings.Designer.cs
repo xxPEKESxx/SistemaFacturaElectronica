@@ -44,5 +44,16 @@ namespace SFE.FrontEnd.Properties {
                 return ((string)(this["SFE_PRUEBAS"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CRACKNALES\\SQLEXPRESS;Initial Catalog=SFE_CostaRica;Integrated Securi" +
+            "ty=True")]
+        public string SFE_CostaRicaConnectionString {
+            get {
+                return ((string)(this["SFE_CostaRicaConnectionString"]));
+            }
+        }
     }
 }
