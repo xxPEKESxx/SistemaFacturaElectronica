@@ -20,6 +20,8 @@ namespace SFE.FrontEnd
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataSet1.Inventario' Puede moverla o quitarla según sea necesario.
+            this.inventarioTableAdapter.Fill(this.sFE_CostaRicaDataSet1.Inventario);
             // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataSet.Clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.sFE_CostaRicaDataSet.Clientes);
 

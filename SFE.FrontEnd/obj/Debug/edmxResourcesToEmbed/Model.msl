@@ -18,10 +18,7 @@
     <EntitySetMapping Name="facturaElectronica">
       <EntityTypeMapping TypeName="SFE_CostaRicaModel.facturaElectronica">
         <MappingFragment StoreEntitySet="facturaElectronica">
-          <ScalarProperty Name="idListaProductos" ColumnName="idListaProductos" />
           <ScalarProperty Name="idUser" ColumnName="idUser" />
-          <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
-          <ScalarProperty Name="descuento" ColumnName="descuento" />
           <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
           <ScalarProperty Name="medioPago" ColumnName="medioPago" />
           <ScalarProperty Name="plazoCredito" ColumnName="plazoCredito" />
@@ -47,11 +44,16 @@
     <EntitySetMapping Name="Inventario">
       <EntityTypeMapping TypeName="SFE_CostaRicaModel.Inventario">
         <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="montoTotalLinea" ColumnName="montoTotalLinea" />
+          <ScalarProperty Name="impuestoMonto" ColumnName="impuestoMonto" />
+          <ScalarProperty Name="impuestoTarifa" ColumnName="impuestoTarifa" />
+          <ScalarProperty Name="codigoDeImpuesto" ColumnName="codigoDeImpuesto" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+          <ScalarProperty Name="unidadDeMedida" ColumnName="unidadDeMedida" />
+          <ScalarProperty Name="numeroDeLinea" ColumnName="numeroDeLinea" />
           <ScalarProperty Name="IdUser" ColumnName="IdUser" />
           <ScalarProperty Name="agregarImpuestoVenta" ColumnName="agregarImpuestoVenta" />
-          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
-          <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
-          <ScalarProperty Name="unidad" ColumnName="unidad" />
           <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
           <ScalarProperty Name="descripcionCorta" ColumnName="descripcionCorta" />
           <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
@@ -63,6 +65,7 @@
     <EntitySetMapping Name="ListaProductos">
       <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
         <MappingFragment StoreEntitySet="ListaProductos">
+          <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
           <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
           <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
           <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />

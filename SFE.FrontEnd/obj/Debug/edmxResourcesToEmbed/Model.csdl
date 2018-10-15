@@ -69,7 +69,6 @@
     <Property Name="descuento" Type="Double" />
     <Property Name="naturalezaDescuento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="idUser" Type="Int32" />
-    <Property Name="idListaProductos" Type="Int32" />
     <NavigationProperty Name="Clientes" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Clientes" FromRole="facturaElectronica" ToRole="Clientes" />
     <NavigationProperty Name="Local" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Local" FromRole="facturaElectronica" ToRole="Local" />
     <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios" FromRole="facturaElectronica" ToRole="Usuarios" />
@@ -99,6 +98,14 @@
     <Property Name="agregarImpuestoVenta" Type="Int32" Nullable="false" />
     <Property Name="IdUser" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_Inventario_Usuarios" FromRole="Inventario" ToRole="Usuarios" />
+    <Property Name="numeroDeLinea" Type="Int32" Nullable="false" />
+    <Property Name="unidadDeMedida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precioUnitario" Type="Double" Nullable="false" />
+    <Property Name="montoTotal" Type="Double" Nullable="false" />
+    <Property Name="codigoDeImpuesto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="impuestoTarifa" Type="Double" Nullable="false" />
+    <Property Name="impuestoMonto" Type="Double" Nullable="false" />
+    <Property Name="montoTotalLinea" Type="Double" Nullable="false" />
   </EntityType>
   <EntityType Name="ListaProductos">
     <Key>
@@ -115,6 +122,7 @@
     <Property Name="precioVenta" Type="Double" Nullable="false" />
     <Property Name="agregarImpuesto" Type="Int32" Nullable="false" />
     <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="ListaProductos" ToRole="facturaElectronica" />
+    <Property Name="idFacturaElectronica" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Local">
     <Key>

@@ -55,5 +55,16 @@ namespace SFE.FrontEnd.Properties {
                 return ((string)(this["SFE_CostaRicaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=CRACKNALES\\SQLEXPRESS;Initial Catalog=SFE_CostaRica;Persist Security " +
+            "Info=True;User ID=sa;Password=A123456a")]
+        public string SFE_CostaRicaConnectionString1 {
+            get {
+                return ((string)(this["SFE_CostaRicaConnectionString1"]));
+            }
+        }
     }
 }

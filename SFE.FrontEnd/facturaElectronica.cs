@@ -32,7 +32,6 @@ namespace SFE.FrontEnd
         public Nullable<double> descuento { get; set; }
         public string naturalezaDescuento { get; set; }
         public Nullable<int> idUser { get; set; }
-        public Nullable<int> idListaProductos { get; set; }
     
         public virtual Clientes Clientes { get; set; }
         public virtual Local Local { get; set; }

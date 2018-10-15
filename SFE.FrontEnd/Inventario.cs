@@ -24,6 +24,14 @@ namespace SFE.FrontEnd
         public double precioVenta { get; set; }
         public int agregarImpuestoVenta { get; set; }
         public int IdUser { get; set; }
+        public int numeroDeLinea { get; set; }
+        public string unidadDeMedida { get; set; }
+        public double precioUnitario { get; set; }
+        public double montoTotal { get; set; }
+        public string codigoDeImpuesto { get; set; }
+        public double impuestoTarifa { get; set; }
+        public double impuestoMonto { get; set; }
+        public double montoTotalLinea { get; set; }
     
         public virtual Usuarios Usuarios { get; set; }
     }

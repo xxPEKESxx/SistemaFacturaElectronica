@@ -31,10 +31,7 @@
           <Property Name="plazoCredito" Type="varchar" MaxLength="50" />
           <Property Name="medioPago" Type="varchar" MaxLength="50" />
           <Property Name="montoTotal" Type="float" />
-          <Property Name="descuento" Type="float" />
-          <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" />
           <Property Name="idUser" Type="int" />
-          <Property Name="idListaProductos" Type="int" />
         </EntityType>
         <EntityType Name="Historial">
           <Key>
@@ -50,21 +47,27 @@
             <PropertyRef Name="idInventario" />
           </Key>
           <Property Name="idInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="codigoProducto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="numeroDeLinea" Type="int" Nullable="false" />
           <Property Name="tipoCodigo" Type="int" Nullable="false" />
+          <Property Name="codigoProducto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="unidadDeMedida" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="descripcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="descripcionLarga" Type="varchar(max)" Nullable="false" />
-          <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="costoCompra" Type="float" Nullable="false" />
-          <Property Name="precioVenta" Type="float" Nullable="false" />
+          <Property Name="precioUnitario" Type="float" Nullable="false" />
+          <Property Name="montoTotal" Type="float" Nullable="false" />
           <Property Name="agregarImpuestoVenta" Type="int" Nullable="false" />
-          <Property Name="IdUser" Type="int" Nullable="false" />
+          <Property Name="codigoDeImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="impuestoTarifa" Type="float" Nullable="false" />
+          <Property Name="impuestoMonto" Type="float" Nullable="false" />
+          <Property Name="montoTotalLinea" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="ListaProductos">
           <Key>
             <PropertyRef Name="idListaProductos" />
           </Key>
           <Property Name="idListaProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFacturaElectronica" Type="int" Nullable="false" />
           <Property Name="numeroConsecutivoDeFactura" Type="int" Nullable="false" />
           <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="tipoCodigo" Type="varchar" MaxLength="50" Nullable="false" />
@@ -178,18 +181,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ListaProductos_facturaElectronica">
-          <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="1" />
-          <End Role="ListaProductos" Type="Self.ListaProductos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="facturaElectronica">
-              <PropertyRef Name="idFacturaElectronica" />
-            </Principal>
-            <Dependent Role="ListaProductos">
-              <PropertyRef Name="numeroConsecutivoDeFactura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Local_Usuarios">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Local" Type="Self.Local" Multiplicity="*" />
@@ -230,10 +221,6 @@
           <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Inventario" EntitySet="Inventario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ListaProductos_facturaElectronica" Association="Self.FK_ListaProductos_facturaElectronica">
-            <End Role="facturaElectronica" EntitySet="facturaElectronica" />
-            <End Role="ListaProductos" EntitySet="ListaProductos" />
           </AssociationSet>
           <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -313,7 +300,6 @@
           <Property Name="descuento" Type="Double" />
           <Property Name="naturalezaDescuento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="idUser" Type="Int32" />
-          <Property Name="idListaProductos" Type="Int32" />
           <NavigationProperty Name="Clientes" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Clientes" FromRole="facturaElectronica" ToRole="Clientes" />
           <NavigationProperty Name="Local" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Local" FromRole="facturaElectronica" ToRole="Local" />
           <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios" FromRole="facturaElectronica" ToRole="Usuarios" />
@@ -343,6 +329,14 @@
           <Property Name="agregarImpuestoVenta" Type="Int32" Nullable="false" />
           <Property Name="IdUser" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_Inventario_Usuarios" FromRole="Inventario" ToRole="Usuarios" />
+          <Property Name="numeroDeLinea" Type="Int32" Nullable="false" />
+          <Property Name="unidadDeMedida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precioUnitario" Type="Double" Nullable="false" />
+          <Property Name="montoTotal" Type="Double" Nullable="false" />
+          <Property Name="codigoDeImpuesto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="impuestoTarifa" Type="Double" Nullable="false" />
+          <Property Name="impuestoMonto" Type="Double" Nullable="false" />
+          <Property Name="montoTotalLinea" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="ListaProductos">
           <Key>
@@ -359,6 +353,7 @@
           <Property Name="precioVenta" Type="Double" Nullable="false" />
           <Property Name="agregarImpuesto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="ListaProductos" ToRole="facturaElectronica" />
+          <Property Name="idFacturaElectronica" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Local">
           <Key>
@@ -516,10 +511,7 @@
           <EntitySetMapping Name="facturaElectronica">
             <EntityTypeMapping TypeName="SFE_CostaRicaModel.facturaElectronica">
               <MappingFragment StoreEntitySet="facturaElectronica">
-                <ScalarProperty Name="idListaProductos" ColumnName="idListaProductos" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
-                <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
-                <ScalarProperty Name="descuento" ColumnName="descuento" />
                 <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
                 <ScalarProperty Name="medioPago" ColumnName="medioPago" />
                 <ScalarProperty Name="plazoCredito" ColumnName="plazoCredito" />
@@ -545,11 +537,16 @@
           <EntitySetMapping Name="Inventario">
             <EntityTypeMapping TypeName="SFE_CostaRicaModel.Inventario">
               <MappingFragment StoreEntitySet="Inventario">
+                <ScalarProperty Name="montoTotalLinea" ColumnName="montoTotalLinea" />
+                <ScalarProperty Name="impuestoMonto" ColumnName="impuestoMonto" />
+                <ScalarProperty Name="impuestoTarifa" ColumnName="impuestoTarifa" />
+                <ScalarProperty Name="codigoDeImpuesto" ColumnName="codigoDeImpuesto" />
+                <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+                <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+                <ScalarProperty Name="unidadDeMedida" ColumnName="unidadDeMedida" />
+                <ScalarProperty Name="numeroDeLinea" ColumnName="numeroDeLinea" />
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="agregarImpuestoVenta" ColumnName="agregarImpuestoVenta" />
-                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
-                <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
-                <ScalarProperty Name="unidad" ColumnName="unidad" />
                 <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
                 <ScalarProperty Name="descripcionCorta" ColumnName="descripcionCorta" />
                 <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
@@ -561,6 +558,7 @@
           <EntitySetMapping Name="ListaProductos">
             <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
               <MappingFragment StoreEntitySet="ListaProductos">
+                <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
                 <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
                 <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
                 <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
