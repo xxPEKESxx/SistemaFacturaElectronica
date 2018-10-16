@@ -77,6 +77,8 @@
           <Property Name="costoCompra" Type="float" Nullable="false" />
           <Property Name="precioVenta" Type="float" Nullable="false" />
           <Property Name="agregarImpuesto" Type="int" Nullable="false" />
+          <Property Name="montoDescuento" Type="float" Nullable="false" />
+          <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Local">
           <Key>
@@ -181,6 +183,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ListaProductos_facturaElectronica">
+          <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="1" />
+          <End Role="ListaProductos" Type="Self.ListaProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facturaElectronica">
+              <PropertyRef Name="idFacturaElectronica" />
+            </Principal>
+            <Dependent Role="ListaProductos">
+              <PropertyRef Name="idFacturaElectronica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Local_Usuarios">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="Local" Type="Self.Local" Multiplicity="*" />
@@ -221,6 +235,10 @@
           <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Inventario" EntitySet="Inventario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ListaProductos_facturaElectronica" Association="Self.FK_ListaProductos_facturaElectronica">
+            <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+            <End Role="ListaProductos" EntitySet="ListaProductos" />
           </AssociationSet>
           <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -283,6 +301,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Local" EntitySet="Local" />
           </AssociationSet>
+          <AssociationSet Name="FK_ListaProductos_facturaElectronica1" Association="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica1">
+            <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+            <End Role="ListaProductos" EntitySet="ListaProductos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="facturaElectronica">
           <Key>
@@ -304,6 +326,7 @@
           <NavigationProperty Name="Local" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Local" FromRole="facturaElectronica" ToRole="Local" />
           <NavigationProperty Name="Usuarios" Relationship="SFE_CostaRicaModel.FK_facturaElectronica_Usuarios" FromRole="facturaElectronica" ToRole="Usuarios" />
           <NavigationProperty Name="ListaProductos" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="facturaElectronica" ToRole="ListaProductos" />
+          <NavigationProperty Name="ListaProductos1" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica1" FromRole="facturaElectronica" ToRole="ListaProductos" />
         </EntityType>
         <EntityType Name="Historial">
           <Key>
@@ -354,6 +377,9 @@
           <Property Name="agregarImpuesto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="facturaElectronica" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" FromRole="ListaProductos" ToRole="facturaElectronica" />
           <Property Name="idFacturaElectronica" Type="Int32" Nullable="false" />
+          <Property Name="montoDescuento" Type="Double" Nullable="false" />
+          <Property Name="naturalezaDescuento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="facturaElectronica1" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica1" FromRole="ListaProductos" ToRole="facturaElectronica" />
         </EntityType>
         <EntityType Name="Local">
           <Key>
@@ -488,6 +514,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ListaProductos_facturaElectronica1">
+          <End Type="SFE_CostaRicaModel.facturaElectronica" Role="facturaElectronica" Multiplicity="1" />
+          <End Type="SFE_CostaRicaModel.ListaProductos" Role="ListaProductos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="facturaElectronica">
+              <PropertyRef Name="idFacturaElectronica" />
+            </Principal>
+            <Dependent Role="ListaProductos">
+              <PropertyRef Name="idFacturaElectronica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -558,6 +596,8 @@
           <EntitySetMapping Name="ListaProductos">
             <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
               <MappingFragment StoreEntitySet="ListaProductos">
+                <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
+                <ScalarProperty Name="montoDescuento" ColumnName="montoDescuento" />
                 <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
                 <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
                 <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />

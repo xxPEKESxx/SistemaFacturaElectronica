@@ -65,6 +65,8 @@
     <EntitySetMapping Name="ListaProductos">
       <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
         <MappingFragment StoreEntitySet="ListaProductos">
+          <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
+          <ScalarProperty Name="montoDescuento" ColumnName="montoDescuento" />
           <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
           <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
           <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />

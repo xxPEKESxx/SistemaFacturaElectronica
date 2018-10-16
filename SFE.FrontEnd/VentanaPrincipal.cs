@@ -59,5 +59,10 @@ namespace SFE.FrontEnd
         {
 
         }
+
+        private void metroTextBox9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

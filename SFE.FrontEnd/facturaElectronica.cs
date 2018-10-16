@@ -18,6 +18,7 @@ namespace SFE.FrontEnd
         public facturaElectronica()
         {
             this.ListaProductos = new HashSet<ListaProductos>();
+            this.ListaProductos1 = new HashSet<ListaProductos>();
         }
     
         public int idFacturaElectronica { get; set; }
@@ -38,5 +39,7 @@ namespace SFE.FrontEnd
         public virtual Usuarios Usuarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListaProductos> ListaProductos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ListaProductos> ListaProductos1 { get; set; }
     }
 }

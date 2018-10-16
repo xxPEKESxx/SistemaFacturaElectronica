@@ -20,6 +20,7 @@
         <AssociationConnector Association="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica" />
         <AssociationConnector Association="SFE_CostaRicaModel.FK_Inventario_Usuarios" />
         <AssociationConnector Association="SFE_CostaRicaModel.FK_Local_Usuarios" />
+        <AssociationConnector Association="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

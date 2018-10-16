@@ -72,6 +72,8 @@
     <Property Name="costoCompra" Type="float" Nullable="false" />
     <Property Name="precioVenta" Type="float" Nullable="false" />
     <Property Name="agregarImpuesto" Type="int" Nullable="false" />
+    <Property Name="montoDescuento" Type="float" Nullable="false" />
+    <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Local">
     <Key>
@@ -176,6 +178,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ListaProductos_facturaElectronica">
+    <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="1" />
+    <End Role="ListaProductos" Type="Self.ListaProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="facturaElectronica">
+        <PropertyRef Name="idFacturaElectronica" />
+      </Principal>
+      <Dependent Role="ListaProductos">
+        <PropertyRef Name="idFacturaElectronica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Local_Usuarios">
     <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
     <End Role="Local" Type="Self.Local" Multiplicity="*" />
@@ -216,6 +230,10 @@
     <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListaProductos_facturaElectronica" Association="Self.FK_ListaProductos_facturaElectronica">
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+      <End Role="ListaProductos" EntitySet="ListaProductos" />
     </AssociationSet>
     <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
