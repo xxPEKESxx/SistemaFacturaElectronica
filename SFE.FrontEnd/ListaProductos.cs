@@ -15,20 +15,23 @@ namespace SFE.FrontEnd
     public partial class ListaProductos
     {
         public int idListaProductos { get; set; }
+        public int idFacturaElectronica { get; set; }
         public int numeroConsecutivoDeFactura { get; set; }
-        public string codigo { get; set; }
+        public string numeroDeLinea { get; set; }
         public string tipoCodigo { get; set; }
+        public string codigo { get; set; }
+        public int cantidad { get; set; }
+        public string unidad { get; set; }
         public string descrpcionCorta { get; set; }
         public string descripcionLarga { get; set; }
-        public string unidad { get; set; }
-        public double costoCompra { get; set; }
-        public double precioVenta { get; set; }
-        public int agregarImpuesto { get; set; }
-        public int idFacturaElectronica { get; set; }
+        public double precioAntesDeImpuesto { get; set; }
         public double montoDescuento { get; set; }
         public string naturalezaDescuento { get; set; }
+        public double precioConImpuesto { get; set; }
+        public string TarifaImpuesto { get; set; }
+        public string montoDeImpuesto { get; set; }
+        public string montoTotalDeLaLinea { get; set; }
     
         public virtual facturaElectronica facturaElectronica { get; set; }
-        public virtual facturaElectronica facturaElectronica1 { get; set; }
     }
 }

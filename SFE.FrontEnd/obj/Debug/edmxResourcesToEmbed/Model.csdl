@@ -131,6 +131,13 @@
     <Property Name="montoDescuento" Type="Double" Nullable="false" />
     <Property Name="naturalezaDescuento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="facturaElectronica1" Relationship="SFE_CostaRicaModel.FK_ListaProductos_facturaElectronica1" FromRole="ListaProductos" ToRole="facturaElectronica" />
+    <Property Name="numeroDeLinea" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precioAntesDeImpuesto" Type="Double" Nullable="false" />
+    <Property Name="precioConImpuesto" Type="Double" Nullable="false" />
+    <Property Name="TarifaImpuesto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="montoDeImpuesto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="montoTotalDeLaLinea" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Local">
     <Key>

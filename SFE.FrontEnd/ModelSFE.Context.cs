@@ -13,10 +13,10 @@ namespace SFE.FrontEnd
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SFE_CostaRicaEntities2 : DbContext
+    public partial class SFE_CostaRicaEntities : DbContext
     {
-        public SFE_CostaRicaEntities2()
-            : base("name=SFE_CostaRicaEntities2")
+        public SFE_CostaRicaEntities()
+            : base("name=SFE_CostaRicaEntities")
         {
         }
     

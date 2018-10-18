@@ -64,16 +64,20 @@
     <Property Name="idListaProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idFacturaElectronica" Type="int" Nullable="false" />
     <Property Name="numeroConsecutivoDeFactura" Type="int" Nullable="false" />
-    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numeroDeLinea" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="tipoCodigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="descrpcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="descripcionLarga" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="costoCompra" Type="float" Nullable="false" />
-    <Property Name="precioVenta" Type="float" Nullable="false" />
-    <Property Name="agregarImpuesto" Type="int" Nullable="false" />
+    <Property Name="precioAntesDeImpuesto" Type="float" Nullable="false" />
     <Property Name="montoDescuento" Type="float" Nullable="false" />
     <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precioConImpuesto" Type="float" Nullable="false" />
+    <Property Name="TarifaImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="montoDeImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="montoTotalDeLaLinea" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Local">
     <Key>

@@ -65,12 +65,16 @@
     <EntitySetMapping Name="ListaProductos">
       <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
         <MappingFragment StoreEntitySet="ListaProductos">
+          <ScalarProperty Name="montoTotalDeLaLinea" ColumnName="montoTotalDeLaLinea" />
+          <ScalarProperty Name="montoDeImpuesto" ColumnName="montoDeImpuesto" />
+          <ScalarProperty Name="TarifaImpuesto" ColumnName="TarifaImpuesto" />
+          <ScalarProperty Name="precioConImpuesto" ColumnName="precioConImpuesto" />
+          <ScalarProperty Name="precioAntesDeImpuesto" ColumnName="precioAntesDeImpuesto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="numeroDeLinea" ColumnName="numeroDeLinea" />
           <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
           <ScalarProperty Name="montoDescuento" ColumnName="montoDescuento" />
           <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
-          <ScalarProperty Name="agregarImpuesto" ColumnName="agregarImpuesto" />
-          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
-          <ScalarProperty Name="costoCompra" ColumnName="costoCompra" />
           <ScalarProperty Name="unidad" ColumnName="unidad" />
           <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
           <ScalarProperty Name="descrpcionCorta" ColumnName="descrpcionCorta" />

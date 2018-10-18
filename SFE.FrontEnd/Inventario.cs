@@ -15,19 +15,16 @@ namespace SFE.FrontEnd
     public partial class Inventario
     {
         public int idInventario { get; set; }
-        public string codigoProducto { get; set; }
-        public int tipoCodigo { get; set; }
-        public string descripcionCorta { get; set; }
-        public string descripcionLarga { get; set; }
-        public string unidad { get; set; }
-        public double costoCompra { get; set; }
-        public double precioVenta { get; set; }
-        public int agregarImpuestoVenta { get; set; }
         public int IdUser { get; set; }
         public int numeroDeLinea { get; set; }
+        public int tipoCodigo { get; set; }
+        public string codigoProducto { get; set; }
         public string unidadDeMedida { get; set; }
+        public string descripcionCorta { get; set; }
+        public string descripcionLarga { get; set; }
         public double precioUnitario { get; set; }
         public double montoTotal { get; set; }
+        public int agregarImpuestoVenta { get; set; }
         public string codigoDeImpuesto { get; set; }
         public double impuestoTarifa { get; set; }
         public double impuestoMonto { get; set; }

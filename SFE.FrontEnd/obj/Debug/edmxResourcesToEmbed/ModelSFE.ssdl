@@ -26,9 +26,58 @@
     <Property Name="plazoCredito" Type="varchar" MaxLength="50" />
     <Property Name="medioPago" Type="varchar" MaxLength="50" />
     <Property Name="montoTotal" Type="float" />
-    <Property Name="descuento" Type="float" />
-    <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" />
     <Property Name="idUser" Type="int" />
+  </EntityType>
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="idHisorial" />
+    </Key>
+    <Property Name="idHisorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="usuarioEditor" Type="varchar" MaxLength="50" />
+    <Property Name="tablaEditada" Type="varbinary" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Inventario">
+    <Key>
+      <PropertyRef Name="idInventario" />
+    </Key>
+    <Property Name="idInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" Nullable="false" />
+    <Property Name="numeroDeLinea" Type="int" Nullable="false" />
+    <Property Name="tipoCodigo" Type="int" Nullable="false" />
+    <Property Name="codigoProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="unidadDeMedida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcionLarga" Type="varchar(max)" Nullable="false" />
+    <Property Name="precioUnitario" Type="float" Nullable="false" />
+    <Property Name="montoTotal" Type="float" Nullable="false" />
+    <Property Name="agregarImpuestoVenta" Type="int" Nullable="false" />
+    <Property Name="codigoDeImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="impuestoTarifa" Type="float" Nullable="false" />
+    <Property Name="impuestoMonto" Type="float" Nullable="false" />
+    <Property Name="montoTotalLinea" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaProductos">
+    <Key>
+      <PropertyRef Name="idListaProductos" />
+    </Key>
+    <Property Name="idListaProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFacturaElectronica" Type="int" Nullable="false" />
+    <Property Name="numeroConsecutivoDeFactura" Type="int" Nullable="false" />
+    <Property Name="numeroDeLinea" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipoCodigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descrpcionCorta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="descripcionLarga" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precioAntesDeImpuesto" Type="float" Nullable="false" />
+    <Property Name="montoDescuento" Type="float" Nullable="false" />
+    <Property Name="naturalezaDescuento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precioConImpuesto" Type="float" Nullable="false" />
+    <Property Name="TarifaImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="montoDeImpuesto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="montoTotalDeLaLinea" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Local">
     <Key>
@@ -50,6 +99,16 @@
     <Property Name="distrito" Type="varchar" MaxLength="50" />
     <Property Name="barrio" Type="varchar" MaxLength="50" />
     <Property Name="ubicacionOtrasSenas" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Usuarios">
     <Key>
@@ -75,6 +134,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_facturaElectronica_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="facturaElectronica">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_facturaElectronica_Local">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="idLocal" />
+      </Principal>
+      <Dependent Role="facturaElectronica">
+        <PropertyRef Name="idLocal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_facturaElectronica_Usuarios">
     <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
     <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="*" />
@@ -84,6 +167,30 @@
       </Principal>
       <Dependent Role="facturaElectronica">
         <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inventario_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Inventario">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListaProductos_facturaElectronica">
+    <End Role="facturaElectronica" Type="Self.facturaElectronica" Multiplicity="1" />
+    <End Role="ListaProductos" Type="Self.ListaProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="facturaElectronica">
+        <PropertyRef Name="idFacturaElectronica" />
+      </Principal>
+      <Dependent Role="ListaProductos">
+        <PropertyRef Name="idFacturaElectronica" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -102,15 +209,35 @@
   <EntityContainer Name="SFE_CostaRicaModelStoreContainer">
     <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="facturaElectronica" EntityType="Self.facturaElectronica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Historial" EntityType="Self.Historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventario" EntityType="Self.Inventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListaProductos" EntityType="Self.ListaProductos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Local" EntityType="Self.Local" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Clientes_Usuarios" Association="Self.FK_Clientes_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="Clientes" EntitySet="Clientes" />
     </AssociationSet>
+    <AssociationSet Name="FK_facturaElectronica_Clientes" Association="Self.FK_facturaElectronica_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_facturaElectronica_Local" Association="Self.FK_facturaElectronica_Local">
+      <End Role="Local" EntitySet="Local" />
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
     <AssociationSet Name="FK_facturaElectronica_Usuarios" Association="Self.FK_facturaElectronica_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inventario_Usuarios" Association="Self.FK_Inventario_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Inventario" EntitySet="Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListaProductos_facturaElectronica" Association="Self.FK_ListaProductos_facturaElectronica">
+      <End Role="facturaElectronica" EntitySet="facturaElectronica" />
+      <End Role="ListaProductos" EntitySet="ListaProductos" />
     </AssociationSet>
     <AssociationSet Name="FK_Local_Usuarios" Association="Self.FK_Local_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
