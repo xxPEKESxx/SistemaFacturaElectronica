@@ -25,8 +25,8 @@ namespace SFE.FrontEnd
 
         private void Login_Load(object sender, EventArgs e)
         {
-          
-        
+
+
 
         }
 
@@ -47,33 +47,60 @@ namespace SFE.FrontEnd
 
         private void botonInicioSesion_Click(object sender, EventArgs e)
         {
-            
-            
 
-         
-                VentanaPrincipal entraSistema = new VentanaPrincipal();
-                String username = " ", cedula=" ",password=" ";
-                ControladorGeneral controlgeneral = new ControladorGeneral();
-               cedula = LogincampoTextoUser.Text;
-                username = LogincampoTextoUser.Text;
-                password = LogincampoTextoPassword.Text;
 
-                if (controlgeneral.iniciarSesion(username,cedula,password))
+
+
+            VentanaPrincipal entraSistema = new VentanaPrincipal();
+            String username = " ", cedula = " ", password = " ";
+            ControladorGeneral controlgeneral = new ControladorGeneral();
+            cedula = LogincampoTextoUser.Text;
+            username = LogincampoTextoUser.Text;
+            password = LogincampoTextoPassword.Text;
+            if (!((LogincampoTextoUser.Text.Equals("")) || (LogincampoTextoUser.Text.Equals(null))))
+            {
+
+                if (!((LogincampoTextoPassword.Text.Equals("")) || (LogincampoTextoPassword.Text.Equals(null))))
                 {
-                    entraSistema.Visible = true;
-                    Login login = new Login();
-                    Visible = false;
-                    
-                }
-                else {
-                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Error en las credenciales de inicio de sesion??",
-               "Verifique que la contraseña o el nombre de usuario esten bien escritos", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    
-                }
+                    if (controlgeneral.iniciarSesion(username,password)) {
+                        entraSistema.Visible = true;
+                        Login login = new Login();
+                        Visible = false;
+                    } else {
 
-           
-            
+                        DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Problemas en la convinacion de credenciales, la contraseña o el nombre de usario no coinciden, " +
+                            "intente llenar los campos con datos ya registrados en el sistema. ",
+             "ERROR EN AUTENTIFICACION ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                    }
+
+
+
+                }
+                else
+                {
+                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this,  "Asegurese de que el campo de contraseña no este en blanco",
+               "Los campos no deben estar en blanco  ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
+            }
+            else
+            {
+                DialogResult dr = MetroFramework.MetroMessageBox.Show(this,  "Asegurese de llenar el campo de nombre de usuario, ya sea con la cedula o el nombre de usuario",
+           "Los campos no deben estar en blanco??", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+
+
+
+
+
+
+            }
         }
     }
 }

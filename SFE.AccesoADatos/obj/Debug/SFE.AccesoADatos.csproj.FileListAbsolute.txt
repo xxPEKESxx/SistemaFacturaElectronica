@@ -20,4 +20,3 @@ C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElec
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.xml
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CopyComplete
-C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csprojAssemblyReference.cache
