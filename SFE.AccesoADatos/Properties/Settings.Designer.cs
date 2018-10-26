@@ -33,5 +33,16 @@ namespace SFE.AccesoADatos.Properties {
                 return ((string)(this["SFE_CostaRicaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=CRACKNALES\\SQLEXPRESS;Integrated Security=SSPI;Ini" +
+            "tial Catalog=SFE_CostaRica")]
+        public string pruebaDeConexion {
+            get {
+                return ((string)(this["pruebaDeConexion"]));
+            }
+        }
     }
 }

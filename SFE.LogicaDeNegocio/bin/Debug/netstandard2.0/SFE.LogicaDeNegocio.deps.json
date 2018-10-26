@@ -35,6 +35,9 @@
         }
       },
       "SFE.AccesoADatos/1.0.0": {
+        "dependencies": {
+          "EntityFramework": "6.0.0.0"
+        },
         "runtime": {
           "SFE.AccesoADatos.dll": {}
         }
@@ -52,6 +55,14 @@
           "FirmaXadesNet.dll": {
             "assemblyVersion": "2.1.0.0",
             "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "EntityFramework.Reference/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
           }
         }
       },
@@ -109,6 +120,11 @@
       "sha512": ""
     },
     "FirmaXadesNet.Reference/2.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework.Reference/6.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SFE_CostaRicaModelStoreContainer" CdmEntityContainer="SFE_CostaRicaEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="tipoDeIdentificacion" ColumnName="tipoDeIdentificacion" />
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="nombreCompleto" ColumnName="nombreCompleto" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facturaElectronica">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.facturaElectronica">
+        <MappingFragment StoreEntitySet="facturaElectronica">
+          <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
+          <ScalarProperty Name="numeroConsecutivo" ColumnName="numeroConsecutivo" />
+          <ScalarProperty Name="numeroClave" ColumnName="numeroClave" />
+          <ScalarProperty Name="idLocal" ColumnName="idLocal" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="condicionVenta" ColumnName="condicionVenta" />
+          <ScalarProperty Name="plazoCredito" ColumnName="plazoCredito" />
+          <ScalarProperty Name="medioPago" ColumnName="medioPago" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Historial">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.Historial">
+        <MappingFragment StoreEntitySet="Historial">
+          <ScalarProperty Name="idHisorial" ColumnName="idHisorial" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="usuarioEditor" ColumnName="usuarioEditor" />
+          <ScalarProperty Name="tablaEditada" ColumnName="tablaEditada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventario">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.Inventario">
+        <MappingFragment StoreEntitySet="Inventario">
+          <ScalarProperty Name="idInventario" ColumnName="idInventario" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="numeroDeLinea" ColumnName="numeroDeLinea" />
+          <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
+          <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+          <ScalarProperty Name="unidadDeMedida" ColumnName="unidadDeMedida" />
+          <ScalarProperty Name="descripcionCorta" ColumnName="descripcionCorta" />
+          <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
+          <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+          <ScalarProperty Name="montoTotal" ColumnName="montoTotal" />
+          <ScalarProperty Name="agregarImpuestoVenta" ColumnName="agregarImpuestoVenta" />
+          <ScalarProperty Name="codigoDeImpuesto" ColumnName="codigoDeImpuesto" />
+          <ScalarProperty Name="impuestoTarifa" ColumnName="impuestoTarifa" />
+          <ScalarProperty Name="impuestoMonto" ColumnName="impuestoMonto" />
+          <ScalarProperty Name="montoTotalLinea" ColumnName="montoTotalLinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaProductos">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.ListaProductos">
+        <MappingFragment StoreEntitySet="ListaProductos">
+          <ScalarProperty Name="idListaProductos" ColumnName="idListaProductos" />
+          <ScalarProperty Name="idFacturaElectronica" ColumnName="idFacturaElectronica" />
+          <ScalarProperty Name="numeroConsecutivoDeFactura" ColumnName="numeroConsecutivoDeFactura" />
+          <ScalarProperty Name="numeroDeLinea" ColumnName="numeroDeLinea" />
+          <ScalarProperty Name="tipoCodigo" ColumnName="tipoCodigo" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="descrpcionCorta" ColumnName="descrpcionCorta" />
+          <ScalarProperty Name="descripcionLarga" ColumnName="descripcionLarga" />
+          <ScalarProperty Name="precioAntesDeImpuesto" ColumnName="precioAntesDeImpuesto" />
+          <ScalarProperty Name="montoDescuento" ColumnName="montoDescuento" />
+          <ScalarProperty Name="naturalezaDescuento" ColumnName="naturalezaDescuento" />
+          <ScalarProperty Name="precioConImpuesto" ColumnName="precioConImpuesto" />
+          <ScalarProperty Name="TarifaImpuesto" ColumnName="TarifaImpuesto" />
+          <ScalarProperty Name="montoDeImpuesto" ColumnName="montoDeImpuesto" />
+          <ScalarProperty Name="montoTotalDeLaLinea" ColumnName="montoTotalDeLaLinea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Local">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.Local">
+        <MappingFragment StoreEntitySet="Local">
+          <ScalarProperty Name="idLocal" ColumnName="idLocal" />
+          <ScalarProperty Name="tipoIdentificacion" ColumnName="tipoIdentificacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="faxTelefono" ColumnName="faxTelefono" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="provincia" ColumnName="provincia" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="claveCritografica" ColumnName="claveCritografica" />
+          <ScalarProperty Name="passwordHacienda" ColumnName="passwordHacienda" />
+          <ScalarProperty Name="numeroIdentificacion" ColumnName="numeroIdentificacion" />
+          <ScalarProperty Name="canton" ColumnName="canton" />
+          <ScalarProperty Name="distrito" ColumnName="distrito" />
+          <ScalarProperty Name="barrio" ColumnName="barrio" />
+          <ScalarProperty Name="ubicacionOtrasSenas" ColumnName="ubicacionOtrasSenas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="SFE_CostaRicaModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ListarUsuario" FunctionName="SFE_CostaRicaModel.Store.ListarUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SFE_CostaRicaModel.ListarUsuario_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

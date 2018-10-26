@@ -20,9 +20,7 @@ namespace SFE.FrontEnd
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.ListaProductos' Puede moverla o quitarla según sea necesario.
-            this.listaProductosTableAdapter.Fill(this.dataSet1.ListaProductos);
-        }
+             }
 
         private void tabSalir_Click(object sender, EventArgs e)
         {
