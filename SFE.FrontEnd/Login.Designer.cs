@@ -62,6 +62,7 @@
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
+            this.metroTile2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.metroTile2.Location = new System.Drawing.Point(215, 211);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(130, 97);
@@ -71,6 +72,7 @@
             this.metroTile2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
             this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.UseCustomBackColor = true;
             this.metroTile2.UseSelectable = true;
             this.metroTile2.UseTileImage = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
@@ -79,6 +81,7 @@
             // 
             this.botonInicioSesion.ActiveControl = null;
             this.botonInicioSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.botonInicioSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.botonInicioSesion.Location = new System.Drawing.Point(65, 211);
             this.botonInicioSesion.Name = "botonInicioSesion";
             this.botonInicioSesion.Size = new System.Drawing.Size(124, 97);
@@ -89,6 +92,7 @@
             this.botonInicioSesion.TileImage = ((System.Drawing.Image)(resources.GetObject("botonInicioSesion.TileImage")));
             this.botonInicioSesion.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.botonInicioSesion.TileTextFontSize = MetroFramework.MetroTileTextSize.Small;
+            this.botonInicioSesion.UseCustomBackColor = true;
             this.botonInicioSesion.UseSelectable = true;
             this.botonInicioSesion.UseTileImage = true;
             this.botonInicioSesion.Click += new System.EventHandler(this.botonInicioSesion_Click);
