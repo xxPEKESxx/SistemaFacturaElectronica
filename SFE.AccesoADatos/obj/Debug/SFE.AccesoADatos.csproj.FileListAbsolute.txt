@@ -12,11 +12,11 @@ C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SFE.AccesoADatos\o
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.dll.config
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.dll
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\SFE.AccesoADatos.pdb
-C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CoreCompileInputs.cache
-C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.dll
-C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.pdb
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.dll
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.xml
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CoreCompileInputs.cache
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CopyComplete
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.dll
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.pdb

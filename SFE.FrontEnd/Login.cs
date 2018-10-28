@@ -14,9 +14,12 @@ using SFE.AccesoADatos;
 
 namespace SFE.FrontEnd
 {
+   
     public partial class Login : MetroFramework.Forms.MetroForm
     {
-
+       string username = " ";
+      
+        VentanaPrincipal entraSistema;
         SFE_CostaRicaEntities db;
         public Login()
         {
@@ -51,12 +54,13 @@ namespace SFE.FrontEnd
 
 
 
-            VentanaPrincipal entraSistema = new VentanaPrincipal();
-            String username = " ", cedula = " ", password = " ";
+            
+            String cedula = " ", password = " ";
             ControladorGeneral controlgeneral = new ControladorGeneral();
             cedula = LogincampoTextoUser.Text;
             username = LogincampoTextoUser.Text;
             password = LogincampoTextoPassword.Text;
+            entraSistema = new VentanaPrincipal(username);
             if (!((LogincampoTextoUser.Text.Equals("")) || (LogincampoTextoUser.Text.Equals(null))))
             {
 
@@ -65,7 +69,7 @@ namespace SFE.FrontEnd
 
                     if (controlgeneral.iniciarSesion(username,password)) {
                         entraSistema.Visible = true;
-                        Login login = new Login();
+                       
                         Visible = false;
                     } else {
 
