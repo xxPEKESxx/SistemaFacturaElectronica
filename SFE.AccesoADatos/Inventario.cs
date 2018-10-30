@@ -16,7 +16,6 @@ namespace SFE.AccesoADatos
     {
         public int idInventario { get; set; }
         public int IdUser { get; set; }
-        public int numeroDeLinea { get; set; }
         public int tipoCodigo { get; set; }
         public string codigoProducto { get; set; }
         public string unidadDeMedida { get; set; }
@@ -29,6 +28,7 @@ namespace SFE.AccesoADatos
         public double impuestoTarifa { get; set; }
         public double impuestoMonto { get; set; }
         public double montoTotalLinea { get; set; }
+        public int estadoDelProducto { get; set; }
     
         public virtual Usuarios Usuarios { get; set; }
     }

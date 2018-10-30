@@ -15,8 +15,10 @@ namespace SFE.AccesoADatos
     public partial class Historial
     {
         public int idHisorial { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public System.DateTime fecha { get; set; }
         public string usuarioEditor { get; set; }
-        public byte[] tablaEditada { get; set; }
+        public string tablaEditada { get; set; }
+        public string tipoDeMovimiento { get; set; }
+        public string descripcionDeMovimiento { get; set; }
     }
 }

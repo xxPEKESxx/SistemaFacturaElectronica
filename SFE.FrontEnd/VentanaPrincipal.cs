@@ -8,29 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using SFE.AccesoADatos;
+using SFE.LogicaDeNegocio;
 
 namespace SFE.FrontEnd
 {
     public partial class VentanaPrincipal : MetroFramework.Forms.MetroForm
     {
+        ControladorGeneral controlGeneral = new ControladorGeneral();
         public VentanaPrincipal(String nombreUsuario)
         {
             InitializeComponent();
             metroLabelInfoUsuario.Text = nombreUsuario;
+           
         }
 
         private void VentanaPrincipal_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataTablas.facturaElectronica' Puede moverla o quitarla según sea necesario.
-            this.facturaElectronicaTableAdapter.Fill(this.sFE_CostaRicaDataTablas.facturaElectronica);
-            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataTablas.ListaProductos' Puede moverla o quitarla según sea necesario.
-            this.listaProductosTableAdapter.Fill(this.sFE_CostaRicaDataTablas.ListaProductos);
-            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataTablas.Inventario' Puede moverla o quitarla según sea necesario.
-            this.inventarioTableAdapter.Fill(this.sFE_CostaRicaDataTablas.Inventario);
-            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataTablas.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.sFE_CostaRicaDataTablas.Clientes);
-            // TODO: esta línea de código carga datos en la tabla 'sFE_CostaRicaDataTablas.Usuarios' Puede moverla o quitarla según sea necesario.
-            this.usuariosTableAdapter.Fill(this.sFE_CostaRicaDataTablas.Usuarios);
+            
+
+          
+            metroGridUsuarios.DataSource = controlGeneral.mostrartablaUsuarios();
+
+
         }
 
         private void tabSalir_Click(object sender, EventArgs e)
@@ -84,6 +84,136 @@ namespace SFE.FrontEnd
         private void metroGridUsuario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void metroTileUsuarioNew_Click(object sender, EventArgs e)
+        {
+            Usuarios usuarios = new Usuarios();
+            ControladorGeneral controlGeneral = new ControladorGeneral();
+   
+            String confirmaPassword= "";
+            
+            try {
+
+                usuarios.nombre = metroTextBoxUsuarioNombre.Text;
+                usuarios.Apellido = metroTextBoxUsuarioApellidos.Text;
+                usuarios.cedula = metroTextBoxUsuarioCedula.Text;
+                usuarios.telefono = metroTextBoxUsuariotelefono.Text;
+                usuarios.nombreUsuario = metroTextBoxUsuarioNombreUsuario.Text;
+                usuarios.password = metroTextBoxUsuarioPassword.Text;
+                confirmaPassword = metroTextBoxUsuarioPasswordConfirm.Text;
+
+
+                if (controlGeneral.IngresarUsuario(usuarios).Equals("Usuario Agregado con exito!!")) {
+                    metroGridUsuarios.DataSource = controlGeneral.mostrartablaUsuarios();
+
+                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Usuario agregado con exito!!",
+               "Excelente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                } else {
+                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Error inesperado en el ingreso del usuario, Error: " ,
+                   "Error fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } catch (Exception excepcion) {
+
+                DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Error inesperado en el ingreso del usuario, Error: "+excepcion.ToString(),
+               "Error fatal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+            
+
+        }
+
+        private void metroTextBoxUsuarioNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void metroTextBoxUsuarioCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else {
+
+                e.Handled = true;
+                DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "En este espacio solo debe de conteber numeros, las letras seran rechazadas " ,
+               "Campo especifico para numeros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void metroTextBoxUsuarioNombre_Validated(object sender, EventArgs e)
+        {
+            if (metroTextBoxUsuarioNombre.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioNombre, "El campo nombre no debe de estar en blanco....");
+
+            }
+            else if (metroTextBoxUsuarioApellidos.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioApellidos, "El campo apellido no debe de estar en blanco....");
+
+
+            }
+            else if (metroTextBoxUsuarioCedula.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioCedula, "El campo cedula no debe de estar en blanco....");
+
+
+            }
+            else if (metroTextBoxUsuarioNombreUsuario.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioNombreUsuario, "El campo contraseña no debe de estar en blanco....");
+
+
+            }
+            else if (metroTextBoxUsuariotelefono.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuariotelefono, "El campo telefono no debe de estar en blanco....");
+
+
+            }
+            else if (metroTextBoxUsuarioPassword.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioPassword, "El campo contraseña no debe de estar en blanco....");
+
+
+            }
+            else if (metroTextBoxUsuarioPasswordConfirm.Text.Trim() == "")
+            {
+
+                errorProviderVP.SetError(metroTextBoxUsuarioPasswordConfirm, "El campo confirmacion de contraseña no debe de estar en blanco....");
+
+
+            } else if (!(metroTextBoxUsuarioPasswordConfirm.Text.Equals(metroTextBoxUsuarioPassword.Text))) {
+
+
+                errorProviderVP.SetError(metroTextBoxUsuarioPassword, "LAS CONTRASEÑAS NO COINCIDEN");
+                errorProviderVP.SetError(metroTextBoxUsuarioPasswordConfirm, "la confirmacion de contraseña y la contraseña deben de ser exactamente iguales");
+
+
+
+
+
+            }
+            else {
+
+                errorProviderVP.Clear();
+            }
         }
     }
 }

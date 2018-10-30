@@ -32,16 +32,16 @@ namespace SFE.AccesoADatos
         public List<Usuarios> Listar()
         {
           
-                var lista = db.Usuarios;
-                return lista.ToList();
+                var lista = db.Usuarios.ToList();
+                return lista;
             
         }
-        public bool iniciarSesion(String username, String password)
+        public bool iniciarSesion(String username, String password,String cedula)
         {
             bool existe = false;
             
              var lista = Listar();
-            if (existeUsuario( username, password)) {
+            if (existeUsuario( username, password,cedula)) {
                 existe = true;
             }
 
@@ -50,7 +50,7 @@ namespace SFE.AccesoADatos
             
         }
 
-        public bool existeUsuario(String username, String Password)
+        public bool existeUsuario(String username, String Password,String cedula)
         {
             bool existe = false;
         
@@ -60,7 +60,7 @@ namespace SFE.AccesoADatos
 
                 foreach (Usuarios users in lista)
                 {
-                if (users.nombreUsuario.Equals(username) && (users.password.Equals(Password))) {
+                if (users.nombreUsuario.Equals(username)||users.cedula.Equals(cedula) && (users.password.Equals(Password))) {
 
                     user = users;
                     existe = true;

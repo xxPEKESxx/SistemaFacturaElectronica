@@ -75,11 +75,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SFE_CostaRicaDataTablas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SFE_CostaRicaDataTablas.xsd</DependentUpon>
-    </Compile>
     <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,17 +109,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SFE_CostaRicaDataTablas.xsc">
-      <DependentUpon>SFE_CostaRicaDataTablas.xsd</DependentUpon>
-    </None>
-    <None Include="SFE_CostaRicaDataTablas.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SFE_CostaRicaDataTablas.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SFE_CostaRicaDataTablas.xss">
-      <DependentUpon>SFE_CostaRicaDataTablas.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -140,7 +124,7 @@
       <Name>SFE.AccesoADatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\SFE.LogicaDeNegocio\SFE.LogicaDeNegocio.csproj">
-      <Project>{ae51c46d-3ed0-4c3a-84e3-2ebaa0cbb7f2}</Project>
+      <Project>{1d771b46-ac21-49a7-8bf3-621bd7b337bb}</Project>
       <Name>SFE.LogicaDeNegocio</Name>
     </ProjectReference>
   </ItemGroup>

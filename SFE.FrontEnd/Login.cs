@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
-using SFE.LogicaDeNegocio;
 using SFE.AccesoADatos;
+using SFE.LogicaDeNegocio;
 
 
 namespace SFE.FrontEnd
@@ -20,7 +20,7 @@ namespace SFE.FrontEnd
        string username = " ";
       
         VentanaPrincipal entraSistema;
-        SFE_CostaRicaEntities db;
+      
         public Login()
         {
             InitializeComponent();
@@ -61,50 +61,54 @@ namespace SFE.FrontEnd
             username = LogincampoTextoUser.Text;
             password = LogincampoTextoPassword.Text;
             entraSistema = new VentanaPrincipal(username);
-            if (!((LogincampoTextoUser.Text.Equals("")) || (LogincampoTextoUser.Text.Equals(null))))
+            try
             {
-
-                if (!((LogincampoTextoPassword.Text.Equals("")) || (LogincampoTextoPassword.Text.Equals(null))))
+                if (!((LogincampoTextoUser.Text.Equals("")) || (LogincampoTextoUser.Text.Equals(null)))
+                    )
                 {
 
-                    if (controlgeneral.iniciarSesion(username,password)) {
-                        entraSistema.Visible = true;
-                       
-                        Visible = false;
-                    } else {
+                    if (!((LogincampoTextoPassword.Text.Equals("")) || (LogincampoTextoPassword.Text.Equals(null))))
+                    {
 
-                        DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Problemas en la convinacion de credenciales, la contraseña o el nombre de usario no coinciden, " +
-                            "intente llenar los campos con datos ya registrados en el sistema. ",
-             "ERROR EN AUTENTIFICACION ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (controlgeneral.iniciarSesion(username, password,cedula))
+                        {
+                            entraSistema.Visible = true;
+
+                            Visible = false;
+                        }
+                        else
+                        {
+
+                            DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Problemas en la convinacion de credenciales, la contraseña o el nombre de usario no coinciden, " +
+                                "intente llenar los campos con datos ya registrados en el sistema. ",
+                 "ERROR EN AUTENTIFICACION ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                        }
+
 
 
                     }
+                    else
+                    {
+                        DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Asegurese de que el campo de contraseña no este en blanco",
+                   "Los campos no deben estar en blanco  ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
-
+                    }
                 }
                 else
                 {
-                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this,  "Asegurese de que el campo de contraseña no este en blanco",
-               "Los campos no deben estar en blanco  ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Asegurese de llenar el campo de nombre de usuario, ya sea con la cedula o el nombre de usuario",
+               "Los campos no deben estar en blanco??", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                 }
+            } catch (Exception ex) {
+                DialogResult dr = MetroFramework.MetroMessageBox.Show(this, "Problema con los contenedores logicos de la aplicacion informacion de error: "+ex.ToString(),
+              "Error en contenedores logicos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                DialogResult dr = MetroFramework.MetroMessageBox.Show(this,  "Asegurese de llenar el campo de nombre de usuario, ya sea con la cedula o el nombre de usuario",
-           "Los campos no deben estar en blanco??", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-
-
-
-
-
-
-            }
+           
         }
     }
 }

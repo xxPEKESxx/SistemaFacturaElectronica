@@ -20,3 +20,4 @@ C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElec
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csproj.CopyComplete
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.dll
 C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.pdb
+C:\Users\ALEXANDER\Documents\GitHub\SistemaFacturaElectronica\SistemaFacturaElectronica\SFE.AccesoADatos\obj\Debug\SFE.AccesoADatos.csprojAssemblyReference.cache
