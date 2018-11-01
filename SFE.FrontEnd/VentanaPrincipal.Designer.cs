@@ -109,6 +109,7 @@
             this.TabUsuario = new MetroFramework.Controls.MetroTabPage();
             this.panelUsuarios = new System.Windows.Forms.Panel();
             this.metroGridUsuarios = new MetroFramework.Controls.MetroGrid();
+            this.eliminaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.metroTextBoxUsuarioNombre = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxUsuarioApellidos = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxUsuarioCedula = new MetroFramework.Controls.MetroTextBox();
@@ -127,7 +128,7 @@
             this.metroLabelInfoUsuario = new MetroFramework.Controls.MetroLabel();
             this.metroLabelUser = new MetroFramework.Controls.MetroLabel();
             this.errorProviderVP = new System.Windows.Forms.ErrorProvider(this.components);
-            this.eliminaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.metroButtonPichaSeMama = new MetroFramework.Controls.MetroButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tab_principal.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
@@ -191,7 +192,7 @@
             this.tab_principal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_principal.Location = new System.Drawing.Point(55, 42);
             this.tab_principal.Name = "tab_principal";
-            this.tab_principal.SelectedIndex = 3;
+            this.tab_principal.SelectedIndex = 0;
             this.tab_principal.Size = new System.Drawing.Size(989, 412);
             this.tab_principal.Style = MetroFramework.MetroColorStyle.Yellow;
             this.tab_principal.TabIndex = 1;
@@ -242,6 +243,7 @@
             this.flowLayoutPanel2.Controls.Add(this.metroTextBoxNombreDeClienteFacturar);
             this.flowLayoutPanel2.Controls.Add(this.metroTextBox16);
             this.flowLayoutPanel2.Controls.Add(this.metroTextBox14);
+            this.flowLayoutPanel2.Controls.Add(this.metroButtonPichaSeMama);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -1634,6 +1636,11 @@
             this.metroGridUsuarios.TabIndex = 23;
             this.metroGridUsuarios.UseStyleColors = true;
             // 
+            // eliminaUsuario
+            // 
+            this.eliminaUsuario.HeaderText = "Eliminar";
+            this.eliminaUsuario.Name = "eliminaUsuario";
+            // 
             // metroTextBoxUsuarioNombre
             // 
             // 
@@ -2009,10 +2016,15 @@
             // 
             this.errorProviderVP.ContainerControl = this;
             // 
-            // eliminaUsuario
+            // metroButtonPichaSeMama
             // 
-            this.eliminaUsuario.HeaderText = "Eliminar";
-            this.eliminaUsuario.Name = "eliminaUsuario";
+            this.metroButtonPichaSeMama.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroButtonPichaSeMama.BackgroundImage")));
+            this.metroButtonPichaSeMama.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.metroButtonPichaSeMama.Location = new System.Drawing.Point(721, 3);
+            this.metroButtonPichaSeMama.Name = "metroButtonPichaSeMama";
+            this.metroButtonPichaSeMama.Size = new System.Drawing.Size(37, 29);
+            this.metroButtonPichaSeMama.TabIndex = 4;
+            this.metroButtonPichaSeMama.UseSelectable = true;
             // 
             // VentanaPrincipal
             // 
@@ -2170,5 +2182,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUserDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn eliminaUsuario;
+        private MetroFramework.Controls.MetroButton metroButtonPichaSeMama;
     }
 }

@@ -128,6 +128,22 @@
         /fyZfDPDD/FmiDfsWMqILgZ/lo7jOD8gil5FmhSWsNw7vAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="metroButtonPichaSeMama.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAmhJREFUWEftl81OwkAQxzlpeAp9A30FTxJRrC0tRE0Qw0fLzauJr4EHfQJJinxE
+        Y9F48wl8AE6cwbvoTJl1tx/iroIkxl8y0cwC8+/s7Ow08c93qD5WV0uevVm5dw6Nrnm4182ndm9zq7Q8
+        H0p3tfVyzz4vec6g0qu9Mct28h9mtHMDo23V9zrWGn3t5xw/1FYqnt0Ug4omChANxLh6V1+hn/keFc/R
+        y54zCgZ1huBrgKhTyMqR3sodGa3cKQRsgA1DIkawptPPqQGptss955UFhqB9EFRM3aSW6SMRzCtzKdu2
+        ihC4L4gYG+28TR+Rw3/yQHD70nw6SdLyl4CQJNTCZUCEbCZwz+FpX1hwsDNaUgaCngkiRlI1AcFd8cnJ
+        HWHrOrORdjNNNPyf3BFCmXDJHU/1obrGgzv9aWlPuzuF7ab2hpZ2tQK5I0y2g9fE1CMKFV5nArDgyB2L
+        rAAEC5NnwaqTOwpvMs5wWrUjKgLwdEAW/CMKfwfkDoLtVUh/g9yfoiIAgcANloXYtg2BU0wANhly+0wK
+        bqcQtMwFF5C5CK+HCxObFROgd6xNcnPwYmECsMOR2wcrnQWTNchKk77ugx2TCch2rANycxYuwL9eSUD8
+        FmiQWtHCWxBcV96ChRchIh5D89lcIncsKgKkjiGCAwffhgU0ooW3YkTtMtLgMtJmdxkhdB3zKehultfx
+        vtyIRqPYWMzEjweSruJo5o9kARGTkWza6cBqn8lIxqBMxA6l0LjkhlLVJw9DNfFRmGETA4oGwWEsl9xz
+        GSZHFAaW334xiYO9mpV6tQO8WLC3z/3V7I+SSLwDhvEyE7gD7WAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="metroButtonBuscarProducto.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -403,7 +419,7 @@
     <value>697, 95</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>86</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
